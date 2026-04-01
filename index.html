@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKT3039 - Garmin Digital Marketing E-Portfolio</title>
+    <style>
+        /* CSS: Giao diện và Bố cục */
+        :root {
+            --primary-color: #000000;
+            --accent-color: #007CC3; /* Xanh Garmin */
+            --bg-color: #f4f4f4;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Thanh điều hướng Navbar */
+        nav {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: var(--accent-color);
+        }
+
+        /* Khu vực nội dung chính */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            min-height: 60vh;
+        }
+
+        .page-section {
+            display: none; /* Ẩn tất cả các trang mặc định */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .page-section.active {
+            display: block; /* Chỉ hiện trang được chọn */
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Style cho Bảng */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+            margin: 20px 0;
+            border: 2px dashed #ccc;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a onclick="showPage('home')" class="nav-link active" id="link-home">Home</a></li>
+            <li><a onclick="showPage('poem')" class="nav-link" id="link-poem">POEM & Engagement</a></li>
+            <li><a onclick="showPage('social')" class="nav-link" id="link-social">Social Media</a></li>
+            <li><a onclick="showPage('website')" class="nav-link" id="link-website">Website Checklist</a></li>
+            <li><a onclick="showPage('trend')" class="nav-link" id="link-trend">Trend Analysis</a></li>
+            <li><a onclick="showPage('references')" class="nav-link" id="link-references">References</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <section id="home" class="page-section active">
+            <h1>Garmin Digital Marketing E-Portfolio</h1>
+            
+            <div class="img-container">
+                <img src="link-anh-1.jpg" alt="Garmin Brand Overview">
+                <div class="img-caption">Figure 1.1: Garmin Brand Overview</div>
+            </div>
+            
+            <p>Welcome to my Digital Marketing E-Portfolio. This project critically analyses the digital marketing strategies of <strong>Garmin</strong>, a leading global brand in wearable technology, specifically focusing on its highly successful <strong>Forerunner</strong> series.</p>
+            
+            <div class="img-container">
+                <img src="link-anh-2.jpg" alt="Garmin Forerunner Series">
+                <div class="img-caption">Figure 1.2: Garmin Forerunner Series</div>
+            </div>
+
+            <p>By applying academic frameworks to real-world marketing practices, this portfolio explores four key areas:</p>
+            <ul>
+                <li><strong>The Ladder of Engagement:</strong> Analysing how Garmin moves customers from passive observers to active co-creators.</li>
+                <li><strong>Evaluation of a Social Media Platform:</strong> Critiquing the use of Strava and Instagram through the "Four Zones of Social Media" framework.</li>
+                <li><strong>Website Checklist:</strong> An empirical evaluation of Garmin.com's usability and customer acquisition potential, visualized through data charts.</li>
+                <li><strong>Trend Analysis:</strong> Investigating the prominent trend of Wearable Tech Data Personalization and User-Generated Content (UGC) in the 2020s.</li>
+            </ul>
+        </section>
+
+       <section id="poem" class="page-section">
+            <h2>2. THE LADDER OF ENGAGEMENT</h2>
+            
+            <h3>Introduction to the Framework</h3>
+            <p>Customer engagement in the digital era is not a monolith; it exists on a spectrum. The "Ladder of Engagement," introduced by PR Smith, illustrates the different levels of customer interaction, progressing from passive observation to active collaboration (Smith, 2020; Chaffey and Ellis-Chadwick, 2019). The levels typically ascend through Ratings, Reviews, Discussions, Ideas, and finally, Collaborative Co-Creation. Moving customers up this ladder turns them into powerful brand advocates (Hollebeek, Glynn and Brodie, 2014).</p>
+            
+            <h3>Garmin Forerunner: Climbing the Ladder</h3>
+            <p>Garmin, specifically through its Forerunner series targeted at runners and triathletes, brilliantly executes strategies across all levels of this ladder:</p>
+            
+            <ul>
+                <li><strong>Ratings & Reviews:</strong> At the base level, Garmin encourages users to leave product ratings and detailed reviews on its official website and through retail partners to build initial trust (Tiago and Veríssimo, 2014).</li>
+                <li><strong>Discussions (and Sharing):</strong> Garmin elevates engagement through its proprietary app, Garmin Connect. Here, users sync their Forerunner data, share running metrics, and discuss training plans with connections. Active communities on platforms like Reddit (r/Garmin) serve as hubs for organic brand discussions (Muniz and O'guinn, 2001).</li>
+                <li><strong>Ideas:</strong> Garmin actively crowdsources innovation through its "Garmin Ideas" submission portal, where users can directly suggest software updates or new metrics they want to see in future Forerunner models (Kannan and Li, 2017).</li>
+                <li><strong>Collaborative Co-Creation:</strong> The pinnacle of Garmin's engagement is the Connect IQ Store. Garmin opened its API to allow independent developers and tech-savvy users to build, code, and share custom watch faces, data fields, and widgets (Garmin Ltd., 2025). This open-source approach not only enhances the product's functionality but allows the top 1% of users to actively co-create the Garmin software ecosystem.</li>
+            </ul>
+
+            <div class="img-container">
+                <img src="link-anh-ladder.jpg" alt="Garmin Ladder of Engagement">
+                <div class="img-caption">Figure 2.1: The Ladder of Engagement Framework</div>
+            </div>
+        </section>
+
+     <section id="social" class="page-section">
+            <h2>3. EVALUATION OF A SOCIAL MEDIA PLATFORM</h2>
+            
+            <div class="img-container">
+                <img src="link-anh-social-1.jpg" alt="Strava Platform Overview">
+                <div class="img-caption">Figure 3.1: Strava Platform Overview</div>
+            </div>
+            
+            <div class="img-container">
+                <img src="link-anh-social-2.jpg" alt="Four Zones of Social Media">
+                <div class="img-caption">Figure 3.2: Four Zones of Social Media Framework</div>
+            </div>
+
+            <p>To evaluate Strava—the primary social network for Garmin users—we can apply the "Four Zones of Social Media" framework proposed by Tuten and Solomon (2017), which divides social media into Social Community, Social Publishing, Social Entertainment, and Social Commerce. According to Kaplan and Haenlein (2010), understanding these functional building blocks is crucial for modern brand strategy.</p>
+            
+            <ul>
+                <li><strong>Social Community:</strong> Strava’s core is built on relationships. Users connect by joining local running "Clubs," leaving comments, and giving "Kudos" (Strava’s equivalent of a 'Like') on workout activities (Kietzmann et al., 2011). It acts as a digital running club for Garmin users.</li>
+                <li><strong>Social Publishing:</strong> When a user finishes a run with their Garmin Forerunner, the biometric data is automatically published to Strava. Furthermore, Strava integrates seamlessly with Instagram, allowing users to publish their route maps directly to their Instagram Stories as user-generated content (Stephen, 2016).</li>
+                <li><strong>Social Entertainment:</strong> Strava gamifies fitness. Features like "Segments" (virtual race sections on real-world roads), "Leaderboards," and "Local Legends" create a highly competitive and entertaining environment. Users even engage in "GPS Art," running specific routes to draw pictures on the map (Ryan, 2016).</li>
+                <li><strong>Social Commerce:</strong> Brands leverage Strava's commerce zone by hosting "Sponsored Challenges." For example, a sportswear brand might challenge users to run 50km in a month. Upon completion, users unlock a digital badge and a discount code for e-commerce purchases, driving direct sales (Lamberton and Stephen, 2016).</li>
+            </ul>
+        </section>
+
+       <section id="website" class="page-section">
+            <h2>4. WEBSITE CHECKLIST</h2>
+            
+            <div class="flex-layout">
+                <div class="img-vertical">
+                    <img src="link-anh-doc-trai.jpg" alt="Garmin Mobile Interface" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                    <div class="img-caption">Figure 4.1: Garmin.com Mobile Interface</div>
+                </div>
+                
+                <div class="img-horizontal flex-col">
+                    <div>
+                        <img src="link-anh-ngang-1.jpg" alt="Website Checklist Evaluation Scores" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                        <div class="img-caption">Figure 4.2: Garmin.com Website Checklist Evaluation Scores</div>
+                    </div>
+                    <div>
+                        <img src="link-anh-ngang-2.jpg" alt="Garmin Desktop Homepage" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                        <div class="img-caption">Figure 4.3: Garmin.com Desktop Homepage</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>A business website must prioritize customer acquisition, conversion, and retention (Chaffey and Smith, 2017). Given the highly technical nature of smartwatches, a website checklist was created based on standard digital marketing criteria to evaluate Garmin's official e-commerce site (Garmin.com).</p>
+
+            <h3>Garmin.com Evaluation Breakdown</h3>
+            <p>As illustrated in the evaluation scores above, Garmin.com scores exceptionally well across crucial digital touchpoints:</p>
+
+            <ul>
+                <li><strong>High-Quality Content & Proper Domain (10/10):</strong> The site features 3D interactive product models, detailed algorithm explanations (e.g., how VO2 Max is calculated), and operates on a secure, localized .com domain (Kotler, Kartajaya and Setiawan, 2016).</li>
+                <li><strong>Accessible Navigation & Mobile Design (9/10):</strong> The mega-menu brilliantly categorizes a massive product line (Automotive, Aviation, Marine, Fitness), making user journeys highly intuitive even on responsive mobile layouts.</li>
+                <li><strong>Blog/Review & Contact Info (9/10):</strong> The "Garmin Blog" provides rich content on training tips and software update patch notes, while the "Support Center" offers highly visible live chat and repair contacts.</li>
+                <li><strong>Fast Loading Times & Social Media Integration (8/10):</strong> Despite heavy multimedia usage, the site relies on effective content delivery networks (CDNs) to maintain speed, with clear links to social communities in the footer (Dodson, 2016).</li>
+            </ul>
+        </section>
+        <section id="trend" class="page-section">
+            <h2>5. TREND ANALYSIS</h2>
+            
+            <p>A defining trend shaping the digital marketing landscape in the 2020s is Wearable Tech Data Personalization fueling User-Generated Content (UGC).</p>
+            
+            <div class="img-container">
+                <img src="link-anh-trend-ngang.jpg" alt="Strava Global User Growth (2021-2025)">
+                <div class="img-caption">Figure 5.1 (Figure 2 in text): Strava Global User Growth (2021-2025)</div>
+            </div>
+            
+            <h3>The Trend</h3>
+            <p>Consumers no longer purchase smartwatches merely for hardware; they buy them for personalized algorithmic insights. Modern devices collect millions of data points, which brands translate into highly personalized daily metrics. Concurrently, the desire to share personal health achievements online has skyrocketed, as evidenced by the massive user growth of fitness platforms like Strava shown in Figure 2 (Strava, 2024; Statista, 2024).</p>
+            
+            <h3>Marketer's Perspective & Application</h3>
+            <p>From a digital marketer's viewpoint, this trend represents a goldmine for authentic brand advocacy (MacInnis, Park and Priester, 2014). Brands like Garmin take advantage of this by transforming complex biometric data into easily digestible, highly shareable visual metrics—such as the "Body Battery," "Sleep Score," or "Daily Suggested Workouts."</p>
+            
+            <div class="flex-layout">
+                <div style="flex: 1; text-align: center;">
+                    <img src="link-anh-trend-doc-1.jpg" alt="Garmin Visual Metric Example" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                    <div class="img-caption">Figure 5.2: Garmin Connect Visual Metrics</div>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    <img src="link-anh-trend-doc-2.jpg" alt="UGC Shared on Social Media" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                    <div class="img-caption">Figure 5.3: User-Generated Content on Social Media</div>
+                </div>
+            </div>
+            
+            <p>Instead of spending heavily on traditional paid media, marketers engineer shareability directly into the UI/UX of the companion apps (We Are Social & Hootsuite, 2024). When a runner achieves a new VO2 Max, the Garmin Connect app generates a sleek, branded graphic overlaying their statistics onto a personal photo. The user then proudly shares this UGC on Instagram or Strava.</p>
+            
+            <p>This strategy capitalizes on the psychological phenomenon of social validation. Every shared graphic acts as a micro-endorsement, proving the device's accuracy and value to the user's network (Zook and Smith, 2016). For brands, taking advantage of this trend requires a seamless integration between data science (to provide accurate insights) and digital marketing (to make those insights frictionless to share).</p>
+        </section>
+      <section id="references" class="page-section">
+            <h2>6. REFERENCES</h2>
+            
+            <div style="text-indent: -30px; padding-left: 30px; margin-top: 20px;">
+                <p>Chaffey, D. and Ellis-Chadwick, F., 2019. <em>Digital marketing</em>. 7th ed. Pearson UK.</p>
+                <p>Chaffey, D. and Smith, P.R., 2017. <em>Digital marketing excellence: planning, optimizing and integrating online marketing</em>. 5th ed. Routledge.</p>
+                <p>Dodson, I., 2016. <em>The digital marketing playbook</em>. John Wiley & Sons.</p>
+                <p>Garmin Ltd., 2025. <em>Annual Report 2024</em>. [online] Garmin Investor Relations. Available at: https://www.garmin.com/en-US/investors/ [Accessed 25 March 2026].</p>
+                <p>Hollebeek, L.D., Glynn, M.S. and Brodie, R.J., 2014. Consumer brand engagement in social media: Conceptualization, scale development and validation. <em>Journal of interactive marketing</em>, 28(2), pp.149-165.</p>
+                <p>Kannan, P.K. and Li, H.A., 2017. Digital marketing: A framework, review and research agenda. <em>International journal of research in marketing</em>, 34(1), pp.22-45.</p>
+                <p>Kaplan, A.M. and Haenlein, M., 2010. Users of the world, unite! The challenges and opportunities of Social Media. <em>Business horizons</em>, 53(1), pp.59-68.</p>
+                <p>Kietzmann, J.H., Hermkens, K., McCarthy, I.P. and Silvestre, B.S., 2011. Social media? Get serious! Understanding the functional building blocks of social media. <em>Business horizons</em>, 54(3), pp.241-251.</p>
+                <p>Kotler, P., Kartajaya, H. and Setiawan, I., 2016. <em>Marketing 4.0: Moving from traditional to digital</em>. John Wiley & Sons.</p>
+                <p>Lamberton, C. and Stephen, A.T., 2016. A thematic exploration of digital, social media, and mobile marketing: Research evolution from 2000 to 2015 and an agenda for future inquiry. <em>Journal of Marketing</em>, 80(6), pp.146-172.</p>
+                <p>MacInnis, D.J., Park, C.W. and Priester, J.W., 2014. <em>Handbook of brand relationships</em>. Routledge.</p>
+                <p>Muniz Jr, A.M. and O'guinn, T.C., 2001. Brand community. <em>Journal of consumer research</em>, 27(4), pp.412-432.</p>
+                <p>Ryan, D., 2016. <em>Understanding digital marketing: marketing strategies for engaging the digital generation</em>. Kogan Page Publishers.</p>
+                <p>Smith, P.R., 2020. <em>The Ladder of Engagement</em>. PR Smith Marketing.</p>
+                <p>Statista, 2024. <em>Number of connected wearable devices worldwide from 2016 to 2024</em>. [online] Statista. Available at: https://www.statista.com/ [Accessed 25 March 2026].</p>
+                <p>Stephen, A.T., 2016. The role of digital and social media marketing in consumer behavior. <em>Current opinion in Psychology</em>, 10, pp.17-21.</p>
+                <p>Strava, 2024. <em>Year in Sport Trend Report</em>. [online] Strava Press. Available at: https://press.strava.com/ [Accessed 25 March 2026].</p>
+                <p>Tiago, M.T.P.M.B. and Veríssimo, J.M.C., 2014. Digital marketing and social media: Why bother?. <em>Business horizons</em>, 57(6), pp.703-708.</p>
+                <p>Tuten, T.L. and Solomon, M.R., 2017. <em>Social media marketing</em>. 2nd ed. Sage.</p>
+                <p>We Are Social & Hootsuite, 2024. <em>Digital 2024: Global Overview Report</em>. [online] DataReportal. Available at: https://datareportal.com/ [Accessed 25 March 2026].</p>
+                <p>Zook, Z. and Smith, P.R., 2016. <em>Marketing communications: offline and online integration, engagement and analytics</em>. Kogan Page Publishers.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Bước 1: Ẩn tất cả các trang
+            let pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Bước 2: Hiển thị trang được chọn
+            document.getElementById(pageId).classList.add('active');
+
+            // Bước 3: Cập nhật trạng thái màu sắc của thanh menu
+            let links = document.querySelectorAll('.nav-link');
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+            document.getElementById('link-' + pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
