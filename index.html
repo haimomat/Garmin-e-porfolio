@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F-UON-M7A - Digital Marketing E-Portfolio</title>
+    <title>MKT3039 - Digital Marketing E-Portfolio</title>
     <style>
         /* CSS: Giao diện và Bố cục */
         :root {
@@ -60,7 +60,6 @@
             color: #fff;
         }
 
-        /* Nút Hamburger (Ẩn trên giao diện PC) */
         .menu-icon {
             display: none;
             font-size: 24px;
@@ -71,33 +70,12 @@
             user-select: none;
         }
 
-        /* Giao diện Mobile (Màn hình nhỏ hơn 768px) */
         @media screen and (max-width: 768px) {
-            .menu-icon {
-                display: block; /* Hiện nút Hamburger */
-            }
-
-            nav ul {
-                display: none; /* Ẩn menu mặc định */
-                flex-direction: column;
-                padding: 0;
-                width: 100%;
-            }
-
-            nav ul.show {
-                display: flex; /* Hiện menu khi được click */
-            }
-
-            nav ul li {
-                margin: 0;
-                text-align: center;
-                border-top: 1px solid #333; /* Đường viền phân cách các menu */
-            }
-
-            nav ul li a {
-                padding: 15px;
-                border-radius: 0;
-            }
+            .menu-icon { display: block; }
+            nav ul { display: none; flex-direction: column; padding: 0; width: 100%; }
+            nav ul.show { display: flex; }
+            nav ul li { margin: 0; text-align: center; border-top: 1px solid #333; }
+            nav ul li a { padding: 15px; border-radius: 0; }
         }
 
         .container {
@@ -110,74 +88,30 @@
             min-height: 60vh;
         }
 
-        .page-section {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
+        .page-section { display: none; animation: fadeIn 0.4s ease-in-out; }
         .page-section.active { display: block; }
-
         h1 { color: var(--primary-color); font-size: 28px; margin-bottom: 20px; }
         h2 { color: var(--primary-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; margin-top: 30px; margin-bottom: 20px; font-size: 22px; }
         h3 { color: #444; font-size: 18px; margin-top: 20px; }
         p { margin-bottom: 15px; text-align: justify; }
         ul, ol { margin-bottom: 20px; padding-left: 20px; }
         li { margin-bottom: 10px; text-align: justify; }
-        
         table { width: 100%; border-collapse: collapse; margin: 30px 0; }
         table, th, td { border: 1px solid #ddd; }
         th, td { padding: 12px; text-align: left; }
         th { background-color: var(--primary-color); color: white; }
 
-        /* CSS cho Hình ảnh */
-        .img-container {
-            margin: 20px 0;
-            text-align: center;
-        }
+        .img-container { margin: 20px 0; text-align: center; }
+        .img-container img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; padding: 5px; }
+        .img-caption { font-size: 14px; color: #666; font-style: italic; margin-top: 8px; text-align: center; }
 
-        .img-container img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 5px;
-        }
+        .flex-layout { display: flex; gap: 20px; margin: 20px 0; align-items: flex-start; }
+        .flex-col { display: flex; flex-direction: column; gap: 20px; }
+        .img-vertical { flex: 1; }
+        .img-horizontal { flex: 2; }
 
-        .img-caption {
-            font-size: 14px;
-            color: #666;
-            font-style: italic;
-            margin-top: 8px;
-            text-align: center;
-        }
-
-        /* Layout Flexbox nâng cao cho các trang có nhiều ảnh ghép nhau */
-        .flex-layout {
-            display: flex;
-            gap: 20px;
-            margin: 20px 0;
-            align-items: flex-start;
-        }
-        
-        .flex-col {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .img-vertical {
-            flex: 1; /* Cột chứa ảnh dọc */
-        }
-        
-        .img-horizontal {
-            flex: 2; /* Cột chứa ảnh ngang (rộng gấp đôi) */
-        }
-
-        /* Reponsive cho hình ảnh ghép đôi khi xem trên điện thoại */
         @media screen and (max-width: 768px) {
-            .flex-layout {
-                flex-direction: column;
-            }
+            .flex-layout { flex-direction: column; }
         }
 
         @keyframes fadeIn {
@@ -189,8 +123,7 @@
 <body>
 
     <nav>
-        <div class="menu-icon" onclick="toggleMenu()">
-            &#9776; </div>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
         <ul id="nav-menu">
             <li><a onclick="showPage('home')" class="nav-link active" id="link-home">Home</a></li>
             <li><a onclick="showPage('poem')" class="nav-link" id="link-poem">Engagement</a></li>
@@ -213,6 +146,8 @@
             
             <p>Welcome to my Digital Marketing E-Portfolio. This project critically analyses the digital marketing strategies of <strong>Garmin</strong>, a leading global brand in wearable technology, specifically focusing on its highly successful <strong>Forerunner</strong> series.</p>
             
+            <p>Historically known for automotive and aviation GPS navigation, Garmin successfully pivoted to the fitness and outdoor recreation market, establishing itself as a prestigious status symbol among serious athletes and health enthusiasts. The Forerunner series, originally introduced in 2003, revolutionized running by putting GPS directly on the wrist. Today, it represents a highly sophisticated ecosystem of smartwatches that seamlessly blend physiological data tracking with advanced digital connectivity. This portfolio unpacks the intricate digital marketing mechanics that have allowed Garmin to cultivate a fiercely loyal community, effectively fending off formidable competitors like Apple and Fitbit in the crowded wearable technology sector.</p>
+            
             <div class="img-container">
                 <img src="src/link-anh-2.jpg" alt="Garmin Forerunner Series">
                 <div class="img-caption">Figure 1.2: Garmin Forerunner Series</div>
@@ -231,20 +166,20 @@
             <h2>2. THE LADDER OF ENGAGEMENT</h2>
             
             <h3>Introduction to the Framework</h3>
-            <p>Customer engagement in the digital era is not a monolith; it exists on a spectrum. The "Ladder of Engagement," introduced by PR Smith, illustrates the different levels of customer interaction, progressing from passive observation to active collaboration (Smith, 2020; Chaffey and Ellis-Chadwick, 2019). The levels typically ascend through Ratings, Reviews, Discussions, Ideas, and finally, Collaborative Co-Creation. Moving customers up this ladder turns them into powerful brand advocates (Hollebeek, Glynn and Brodie, 2014).</p>
+            <p>Customer engagement in the digital era is not a monolith; it exists on a spectrum. The "Ladder of Engagement," introduced by PR Smith, illustrates the different levels of customer interaction, progressing from passive observation to active collaboration (Smith, 2020; Chaffey and Ellis-Chadwick, 2019). The levels typically ascend through Ratings, Reviews, Discussions, Ideas, and finally, Collaborative Co-Creation. Moving customers up this ladder turns them into powerful brand advocates who not only purchase products but actively promote and improve them (Hollebeek, Glynn and Brodie, 2014).</p>
             
             <h3>Garmin Forerunner: Climbing the Ladder</h3>
-            <p>Garmin, specifically through its Forerunner series targeted at runners and triathletes, brilliantly executes strategies across all levels of this ladder:</p>
+            <p>Garmin, specifically through its Forerunner series targeted at runners and triathletes, brilliantly executes strategies across all levels of this ladder to build an impenetrable brand community:</p>
             
             <ul>
-                <li><strong>Ratings & Reviews:</strong> At the base level, Garmin encourages users to leave product ratings and detailed reviews on its official website and through retail partners to build initial trust (Tiago and Veríssimo, 2014).</li>
-                <li><strong>Discussions (and Sharing):</strong> Garmin elevates engagement through its proprietary app, Garmin Connect. Here, users sync their Forerunner data, share running metrics, and discuss training plans with connections. Active communities on platforms like Reddit (r/Garmin) serve as hubs for organic brand discussions (Muniz and O'guinn, 2001).</li>
-                <li><strong>Ideas:</strong> Garmin actively crowdsources innovation through its "Garmin Ideas" submission portal, where users can directly suggest software updates or new metrics they want to see in future Forerunner models (Kannan and Li, 2017).</li>
-                <li><strong>Collaborative Co-Creation:</strong> The pinnacle of Garmin's engagement is the Connect IQ Store. Garmin opened its API to allow independent developers and tech-savvy users to build, code, and share custom watch faces, data fields, and widgets (Garmin Ltd., 2025). This open-source approach not only enhances the product's functionality but allows the top 1% of users to actively co-create the Garmin software ecosystem.</li>
+                <li><strong>Ratings & Reviews:</strong> At the base level, Garmin encourages users to leave product ratings and detailed reviews on its official website and through retail partners to build initial trust (Tiago and Veríssimo, 2014). This user-generated feedback acts as essential social proof for hesitant buyers.</li>
+                <li><strong>Discussions (and Sharing):</strong> Garmin elevates engagement through its proprietary app, Garmin Connect. Here, users sync their Forerunner data, share running metrics, and discuss training plans with connections. In this phase, Garmin taps into the psychological concept of social validation. The app features an interactive "News Feed" where users can view connections' activities, join weekly step challenges, and earn digital badges. This gamification fosters a sticky ecosystem where users are motivated to remain engaged daily. Furthermore, active communities on platforms like Reddit (r/Garmin) serve as massive hubs for organic brand discussions and peer-to-peer technical support (Muniz and O'guinn, 2001).</li>
+                <li><strong>Ideas:</strong> Garmin actively crowdsources innovation through its "Garmin Ideas" submission portal, where users can directly suggest software updates or new metrics they want to see in future Forerunner models (Kannan and Li, 2017). This gives the customer a voice and makes them feel valued by the corporate entity.</li>
+                <li><strong>Collaborative Co-Creation:</strong> The pinnacle of Garmin's engagement is the Connect IQ Store. Garmin opened its API to allow independent developers and tech-savvy users to build, code, and share custom watch faces, data fields, and widgets (Garmin Ltd., 2025). This open-source approach represents a masterclass in modern marketing. By empowering users to build personalized tools—such as specialized triathlon transition timers—Garmin effectively outsources innovation to its most passionate advocates. This not only significantly reduces internal R&D costs but also creates an emotional lock-in; a customer who has heavily customized their digital ecosystem is highly unlikely to switch to a competitor.</li>
             </ul>
 
             <div class="img-container">
-                <img src="src/link-anh-ladder.jpg" alt="Garmin Ladder of Engagement">
+                <img src="src/link-anh-ladder.jpg" alt="Customer reviewing Garmin Forerunner">
                 <div class="img-caption">Figure 2.1: Customer Reviewing the Garmin Forerunner</div>
             </div>
         </section>
@@ -265,10 +200,10 @@
             <p>To evaluate Strava—the primary social network for Garmin users—we can apply the "Four Zones of Social Media" framework proposed by Tuten and Solomon (2017), which divides social media into Social Community, Social Publishing, Social Entertainment, and Social Commerce. According to Kaplan and Haenlein (2010), understanding these functional building blocks is crucial for modern brand strategy.</p>
             
             <ul>
-                <li><strong>Social Community:</strong> Strava’s core is built on relationships. Users connect by joining local running "Clubs," leaving comments, and giving "Kudos" (Strava’s equivalent of a 'Like') on workout activities (Kietzmann et al., 2011). It acts as a digital running club for Garmin users.</li>
-                <li><strong>Social Publishing:</strong> When a user finishes a run with their Garmin Forerunner, the biometric data is automatically published to Strava. Furthermore, Strava integrates seamlessly with Instagram, allowing users to publish their route maps directly to their Instagram Stories as user-generated content (Stephen, 2016).</li>
-                <li><strong>Social Entertainment:</strong> Strava gamifies fitness. Features like "Segments" (virtual race sections on real-world roads), "Leaderboards," and "Local Legends" create a highly competitive and entertaining environment. Users even engage in "GPS Art," running specific routes to draw pictures on the map (Ryan, 2016).</li>
-                <li><strong>Social Commerce:</strong> Brands leverage Strava's commerce zone by hosting "Sponsored Challenges." For example, a sportswear brand might challenge users to run 50km in a month. Upon completion, users unlock a digital badge and a discount code for e-commerce purchases, driving direct sales (Lamberton and Stephen, 2016).</li>
+                <li><strong>Social Community:</strong> Strava’s core is built on relationships. Users connect by joining local running "Clubs," leaving comments, and giving "Kudos" (Strava’s equivalent of a 'Like') on workout activities (Kietzmann et al., 2011). It acts as a digital running club for Garmin users. Furthermore, Garmin actively sponsors professional athletes within these communities, creating a halo effect where amateur runners aspire to train like the pros they follow and interact with on Strava.</li>
+                <li><strong>Social Publishing:</strong> When a user finishes a run with their Garmin Forerunner, the biometric data is automatically published to Strava. Furthermore, Strava integrates seamlessly with Instagram, allowing users to publish their route maps directly to their Instagram Stories as user-generated content (Stephen, 2016). Garmin leverages macro and micro-influencers across these publishing zones to demonstrate the aesthetic and functional appeal of the Forerunner in everyday life, not just on the track.</li>
+                <li><strong>Social Entertainment:</strong> Strava gamifies fitness. Features like "Segments" (virtual race sections on real-world roads), "Leaderboards," and "Local Legends" create a highly competitive and entertaining environment. The integration of Garmin data with third-party visualization apps like Relive allows users to generate cinematic 3D video recaps of their running routes. This turns a grueling workout into an entertaining, highly shareable cinematic story, while users even engage in "GPS Art," running specific routes to draw pictures on the map (Ryan, 2016).</li>
+                <li><strong>Social Commerce:</strong> Brands leverage Strava's commerce zone by hosting "Sponsored Challenges." For example, a sportswear brand might challenge users to run 50km in a month. Upon completion, users unlock a digital badge and a discount code for e-commerce purchases, driving direct sales (Lamberton and Stephen, 2016). Additionally, Garmin strategically uses retargeting pixels; if a user engages with a Strava challenge, they are seamlessly served dynamic advertisements featuring the exact Forerunner watch model on other platforms, effectively pushing them down the sales funnel.</li>
             </ul>
         </section>
 
@@ -300,9 +235,9 @@
 
             <ul>
                 <li><strong>High-Quality Content & Proper Domain (10/10):</strong> The site features 3D interactive product models, detailed algorithm explanations (e.g., how VO2 Max is calculated), and operates on a secure, localized .com domain (Kotler, Kartajaya and Setiawan, 2016).</li>
-                <li><strong>Accessible Navigation & Mobile Design (9/10):</strong> The mega-menu brilliantly categorizes a massive product line (Automotive, Aviation, Marine, Fitness), making user journeys highly intuitive even on responsive mobile layouts.</li>
-                <li><strong>Blog/Review & Contact Info (9/10):</strong> The "Garmin Blog" provides rich content on training tips and software update patch notes, while the "Support Center" offers highly visible live chat and repair contacts.</li>
-                <li><strong>Fast Loading Times & Social Media Integration (8/10):</strong> Despite heavy multimedia usage, the site relies on effective content delivery networks (CDNs) to maintain speed, with clear links to social communities in the footer (Dodson, 2016).</li>
+                <li><strong>Accessible Navigation & Mobile Design (9/10):</strong> The mega-menu brilliantly categorizes a massive product line (Automotive, Aviation, Marine, Fitness), making user journeys highly intuitive even on responsive mobile layouts. The inclusion of a robust product comparison tool is particularly vital, as the Forerunner lineup has numerous models with minute feature differences. This tool aids in reducing consumer choice overload and accelerates the conversion process.</li>
+                <li><strong>Blog/Review & Contact Info (9/10):</strong> The "Garmin Blog" provides rich content on training tips and software update patch notes, while the "Support Center" offers highly visible live chat and repair contacts. This robust content strategy also serves advanced Search Engine Optimization (SEO) purposes, driving substantial organic traffic from users at the top of the funnel searching for fitness advice.</li>
+                <li><strong>Fast Loading Times & Social Media Integration (8/10):</strong> Despite heavy multimedia usage, the site relies on effective content delivery networks (CDNs) to maintain speed, with clear links to social communities in the footer (Dodson, 2016). Furthermore, to address cart abandonment, Garmin employs targeted email marketing workflows, offering personalized accessory recommendations based on browsing history.</li>
             </ul>
         </section>
 
@@ -336,6 +271,8 @@
             <p>Instead of spending heavily on traditional paid media, marketers engineer shareability directly into the UI/UX of the companion apps (We Are Social & Hootsuite, 2024). When a runner achieves a new VO2 Max, the Garmin Connect app generates a sleek, branded graphic overlaying their statistics onto a personal photo. The user then proudly shares this UGC on Instagram or Strava.</p>
             
             <p>This strategy capitalizes on the psychological phenomenon of social validation. Every shared graphic acts as a micro-endorsement, proving the device's accuracy and value to the user's network (Zook and Smith, 2016). For brands, taking advantage of this trend requires a seamless integration between data science (to provide accurate insights) and digital marketing (to make those insights frictionless to share).</p>
+
+            <p>As we look toward the latter half of the decade, this trend is rapidly evolving from historical data reporting to predictive Artificial Intelligence (AI). Future digital marketing campaigns will likely highlight AI-driven features, such as predicting a user's marathon finish time or alerting them to potential overtraining before an injury occurs. However, this heavy reliance on personal biometric data also introduces significant challenges regarding digital privacy. Marketers must now pivot to position data security as a core brand value. Garmin’s commitment to transparent data policies and secure servers is not just a legal requirement but a crucial marketing asset that builds trust. Ultimately, brands that can perfectly balance ultra-personalized insights with uncompromising data privacy will dominate the wearable tech narrative.</p>
         </section>
 
         <section id="references" class="page-section">
@@ -384,10 +321,9 @@
             document.getElementById('link-' + pageId).classList.add('active');
             
             window.scrollTo(0, 0);
-            toggleMenu(); // Tự động đóng menu trên mobile khi click xong
+            toggleMenu();
         }
 
-        // Hàm xử lý đóng/mở Hamburger Menu trên điện thoại
         function toggleMenu() {
             if (window.innerWidth <= 768) {
                 let menu = document.getElementById("nav-menu");
