@@ -131,9 +131,11 @@
 <body>
 
     <nav>
-        <ul>
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776; </div>
+        <ul id="nav-menu">
             <li><a onclick="showPage('home')" class="nav-link active" id="link-home">Home</a></li>
-            <li><a onclick="showPage('poem')" class="nav-link" id="link-poem">POEM & Engagement</a></li>
+            <li><a onclick="showPage('poem')" class="nav-link" id="link-poem">Engagement</a></li>
             <li><a onclick="showPage('social')" class="nav-link" id="link-social">Social Media</a></li>
             <li><a onclick="showPage('website')" class="nav-link" id="link-website">Website Checklist</a></li>
             <li><a onclick="showPage('trend')" class="nav-link" id="link-trend">Trend Analysis</a></li>
