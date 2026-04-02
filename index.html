@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MKT3039 - Garmin Digital Marketing E-Portfolio</title>
+    <title>F-UON-M7A - Digital Marketing E-Portfolio</title>
     <style>
         /* CSS: Giao diện và Bố cục */
         :root {
             --primary-color: #000000;
-            --accent-color: #007CC3; /* Xanh Garmin */
-            --bg-color: #f4f4f4;
+            --accent-color: #007CC3; 
+            --bg-color: #fcfcfc;
             --text-color: #333333;
         }
 
@@ -22,11 +22,10 @@
             line-height: 1.6;
         }
 
-        /* Thanh điều hướng Navbar */
+        /* Navbar base */
         nav {
             background-color: var(--primary-color);
             color: white;
-            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -36,36 +35,75 @@
         nav ul {
             list-style: none;
             margin: 0;
-            padding: 0;
+            padding: 15px 0;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        nav ul li {
-            margin: 0 15px;
-        }
+        nav ul li { margin: 0 10px; }
 
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
-            padding: 5px 10px;
+            padding: 8px 12px;
             border-radius: 4px;
             transition: background 0.3s;
+            display: block;
         }
 
         nav ul li a:hover, nav ul li a.active {
             background-color: var(--accent-color);
+            color: #fff;
         }
 
-        /* Khu vực nội dung chính */
+        /* Nút Hamburger (Ẩn trên giao diện PC) */
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px 20px;
+            text-align: right;
+            color: white;
+            user-select: none;
+        }
+
+        /* Giao diện Mobile (Màn hình nhỏ hơn 768px) */
+        @media screen and (max-width: 768px) {
+            .menu-icon {
+                display: block; /* Hiện nút Hamburger */
+            }
+
+            nav ul {
+                display: none; /* Ẩn menu mặc định */
+                flex-direction: column;
+                padding: 0;
+                width: 100%;
+            }
+
+            nav ul.show {
+                display: flex; /* Hiện menu khi được click */
+            }
+
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                border-top: 1px solid #333; /* Đường viền phân cách các menu */
+            }
+
+            nav ul li a {
+                padding: 15px;
+                border-radius: 0;
+            }
+        }
+
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 40px auto;
-            padding: 30px;
+            padding: 40px;
             background: white;
             box-shadow: 0 0 15px rgba(0,0,0,0.05);
             border-radius: 8px;
@@ -73,53 +111,73 @@
         }
 
         .page-section {
-            display: none; /* Ẩn tất cả các trang mặc định */
-            animation: fadeIn 0.5s ease-in-out;
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
         }
 
-        .page-section.active {
-            display: block; /* Chỉ hiện trang được chọn */
-        }
+        .page-section.active { display: block; }
 
-        h1, h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
+        h1 { color: var(--primary-color); font-size: 28px; margin-bottom: 20px; }
+        h2 { color: var(--primary-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; margin-top: 30px; margin-bottom: 20px; font-size: 22px; }
+        h3 { color: #444; font-size: 18px; margin-top: 20px; }
+        p { margin-bottom: 15px; text-align: justify; }
+        ul, ol { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 10px; text-align: justify; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 30px 0; }
+        table, th, td { border: 1px solid #ddd; }
+        th, td { padding: 12px; text-align: left; }
+        th { background-color: var(--primary-color); color: white; }
 
-        /* Style cho Bảng */
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        /* CSS cho Hình ảnh */
+        .img-container {
             margin: 20px 0;
+            text-align: center;
         }
 
-        table, th, td {
+        .img-container img {
+            max-width: 100%;
+            height: auto;
             border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
         }
 
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .image-placeholder {
-            width: 100%;
-            height: 300px;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .img-caption {
+            font-size: 14px;
             color: #666;
             font-style: italic;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* Layout Flexbox nâng cao cho các trang có nhiều ảnh ghép nhau */
+        .flex-layout {
+            display: flex;
+            gap: 20px;
             margin: 20px 0;
-            border: 2px dashed #ccc;
+            align-items: flex-start;
+        }
+        
+        .flex-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .img-vertical {
+            flex: 1; /* Cột chứa ảnh dọc */
+        }
+        
+        .img-horizontal {
+            flex: 2; /* Cột chứa ảnh ngang (rộng gấp đôi) */
+        }
+
+        /* Reponsive cho hình ảnh ghép đôi khi xem trên điện thoại */
+        @media screen and (max-width: 768px) {
+            .flex-layout {
+                flex-direction: column;
+            }
         }
 
         @keyframes fadeIn {
@@ -149,14 +207,14 @@
             <h1>Garmin Digital Marketing E-Portfolio</h1>
             
             <div class="img-container">
-                <img src="link-anh-1.jpg" alt="Garmin Brand Overview">
+                <img src="src/link-anh-1.jpg" alt="Garmin Brand Overview">
                 <div class="img-caption">Figure 1.1: Garmin Brand Overview</div>
             </div>
             
             <p>Welcome to my Digital Marketing E-Portfolio. This project critically analyses the digital marketing strategies of <strong>Garmin</strong>, a leading global brand in wearable technology, specifically focusing on its highly successful <strong>Forerunner</strong> series.</p>
             
             <div class="img-container">
-                <img src="link-anh-2.jpg" alt="Garmin Forerunner Series">
+                <img src="src/link-anh-2.jpg" alt="Garmin Forerunner Series">
                 <div class="img-caption">Figure 1.2: Garmin Forerunner Series</div>
             </div>
 
@@ -169,7 +227,7 @@
             </ul>
         </section>
 
-       <section id="poem" class="page-section">
+        <section id="poem" class="page-section">
             <h2>2. THE LADDER OF ENGAGEMENT</h2>
             
             <h3>Introduction to the Framework</h3>
@@ -186,21 +244,21 @@
             </ul>
 
             <div class="img-container">
-                <img src="link-anh-ladder.jpg" alt="Garmin Ladder of Engagement">
+                <img src="src/link-anh-ladder.jpg" alt="Garmin Ladder of Engagement">
                 <div class="img-caption">Figure 2.1: The Ladder of Engagement Framework</div>
             </div>
         </section>
 
-     <section id="social" class="page-section">
+        <section id="social" class="page-section">
             <h2>3. EVALUATION OF A SOCIAL MEDIA PLATFORM</h2>
             
             <div class="img-container">
-                <img src="link-anh-social-1.jpg" alt="Strava Platform Overview">
+                <img src="src/link-anh-social-1.jpg" alt="Strava Platform Overview">
                 <div class="img-caption">Figure 3.1: Strava Platform Overview</div>
             </div>
             
             <div class="img-container">
-                <img src="link-anh-social-2.jpg" alt="Four Zones of Social Media">
+                <img src="src/link-anh-social-2.jpg" alt="Four Zones of Social Media">
                 <div class="img-caption">Figure 3.2: Four Zones of Social Media Framework</div>
             </div>
 
@@ -214,22 +272,22 @@
             </ul>
         </section>
 
-       <section id="website" class="page-section">
+        <section id="website" class="page-section">
             <h2>4. WEBSITE CHECKLIST</h2>
             
             <div class="flex-layout">
                 <div class="img-vertical">
-                    <img src="link-anh-doc-trai.jpg" alt="Garmin Mobile Interface" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                    <img src="src/link-anh-doc-trai.jpg" alt="Garmin Mobile Interface" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
                     <div class="img-caption">Figure 4.1: Garmin.com Mobile Interface</div>
                 </div>
                 
                 <div class="img-horizontal flex-col">
                     <div>
-                        <img src="link-anh-ngang-1.jpg" alt="Website Checklist Evaluation Scores" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                        <img src="src/link-anh-ngang-1.jpg" alt="Website Checklist Evaluation Scores" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
                         <div class="img-caption">Figure 4.2: Garmin.com Website Checklist Evaluation Scores</div>
                     </div>
                     <div>
-                        <img src="link-anh-ngang-2.jpg" alt="Garmin Desktop Homepage" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                        <img src="src/link-anh-ngang-2.jpg" alt="Garmin Desktop Homepage" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
                         <div class="img-caption">Figure 4.3: Garmin.com Desktop Homepage</div>
                     </div>
                 </div>
@@ -247,13 +305,14 @@
                 <li><strong>Fast Loading Times & Social Media Integration (8/10):</strong> Despite heavy multimedia usage, the site relies on effective content delivery networks (CDNs) to maintain speed, with clear links to social communities in the footer (Dodson, 2016).</li>
             </ul>
         </section>
+
         <section id="trend" class="page-section">
             <h2>5. TREND ANALYSIS</h2>
             
             <p>A defining trend shaping the digital marketing landscape in the 2020s is Wearable Tech Data Personalization fueling User-Generated Content (UGC).</p>
             
             <div class="img-container">
-                <img src="link-anh-trend-ngang.jpg" alt="Strava Global User Growth (2021-2025)">
+                <img src="src/link-anh-trend-ngang.jpg" alt="Strava Global User Growth (2021-2025)">
                 <div class="img-caption">Figure 5.1 (Figure 2 in text): Strava Global User Growth (2021-2025)</div>
             </div>
             
@@ -265,11 +324,11 @@
             
             <div class="flex-layout">
                 <div style="flex: 1; text-align: center;">
-                    <img src="link-anh-trend-doc-1.jpg" alt="Garmin Visual Metric Example" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                    <img src="src/link-anh-trend-doc-1.jpg" alt="Garmin Visual Metric Example" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
                     <div class="img-caption">Figure 5.2: Garmin Connect Visual Metrics</div>
                 </div>
                 <div style="flex: 1; text-align: center;">
-                    <img src="link-anh-trend-doc-2.jpg" alt="UGC Shared on Social Media" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                    <img src="src/link-anh-trend-doc-2.jpg" alt="UGC Shared on Social Media" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
                     <div class="img-caption">Figure 5.3: User-Generated Content on Social Media</div>
                 </div>
             </div>
@@ -278,7 +337,8 @@
             
             <p>This strategy capitalizes on the psychological phenomenon of social validation. Every shared graphic acts as a micro-endorsement, proving the device's accuracy and value to the user's network (Zook and Smith, 2016). For brands, taking advantage of this trend requires a seamless integration between data science (to provide accurate insights) and digital marketing (to make those insights frictionless to share).</p>
         </section>
-      <section id="references" class="page-section">
+
+        <section id="references" class="page-section">
             <h2>6. REFERENCES</h2>
             
             <div style="text-indent: -30px; padding-left: 30px; margin-top: 20px;">
@@ -310,21 +370,29 @@
 
     <script>
         function showPage(pageId) {
-            // Bước 1: Ẩn tất cả các trang
             let pages = document.querySelectorAll('.page-section');
             pages.forEach(page => {
                 page.classList.remove('active');
             });
 
-            // Bước 2: Hiển thị trang được chọn
             document.getElementById(pageId).classList.add('active');
 
-            // Bước 3: Cập nhật trạng thái màu sắc của thanh menu
             let links = document.querySelectorAll('.nav-link');
             links.forEach(link => {
                 link.classList.remove('active');
             });
             document.getElementById('link-' + pageId).classList.add('active');
+            
+            window.scrollTo(0, 0);
+            toggleMenu(); // Tự động đóng menu trên mobile khi click xong
+        }
+
+        // Hàm xử lý đóng/mở Hamburger Menu trên điện thoại
+        function toggleMenu() {
+            if (window.innerWidth <= 768) {
+                let menu = document.getElementById("nav-menu");
+                menu.classList.toggle("show");
+            }
         }
     </script>
 </body>
